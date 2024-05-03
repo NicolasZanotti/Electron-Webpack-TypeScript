@@ -1,0 +1,24 @@
+{
+  "name": "electron",
+  "version": "1.0.0",
+  "description": "Boilerplate",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicolasZanotti/Electron.git"
+  },
+  "author": "Nicolas Zanotti",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/NicolasZanotti/Electron/issues"
+  },
+  "homepage": "https://github.com/NicolasZanotti/Electron#readme",
+  "devDependencies": {
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.5"
+  }
+}
