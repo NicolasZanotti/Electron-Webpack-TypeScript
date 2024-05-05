@@ -2,23 +2,14 @@
   "name": "electron",
   "version": "1.0.0",
   "description": "Boilerplate",
-  "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "tsc"
+    "build": "webpack --config ./webpack-config.ts"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/NicolasZanotti/Electron.git"
-  },
-  "author": "Nicolas Zanotti",
-  "license": "UNLICENSED",
-  "bugs": {
-    "url": "https://github.com/NicolasZanotti/Electron/issues"
-  },
-  "homepage": "https://github.com/NicolasZanotti/Electron#readme",
   "devDependencies": {
-    "ts-loader": "^9.5.1",
-    "typescript": "^5.4.5"
+    "esbuild-register": "3.5.0",
+    "ts-loader": "9.5.1",
+    "typescript": "5.4.5",
+    "webpack-cli": "5.1.4"
   }
 }
