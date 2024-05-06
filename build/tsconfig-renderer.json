@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "outDir": "../dist/",
+    "module": "ES2022",
+    "target": "ES2022",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "moduleResolution": "Bundler",
+    "allowSyntheticDefaultImports": true,
+  }
+}

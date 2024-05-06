@@ -4,12 +4,20 @@
   "description": "Boilerplate",
   "type": "module",
   "scripts": {
-    "build": "webpack --config ./webpack-config.ts"
+    "build": "concurrently \"npm run build-main\" \"npm run build-renderer\"",
+    "build-main": "node_modules/.bin/webpack --config ./build/webpack-config-main.js",
+    "build-renderer": "node_modules/.bin/webpack --config ./build/webpack-config-renderer.js",
+    "start": "electron ./dist/main.cjs"
+  },
+  "dependencies": {
+    "electron": "30.0.2"
   },
   "devDependencies": {
-    "esbuild-register": "3.5.0",
+    "@types/node": "20.12.8",
+    "concurrently": "8.2.2",
     "ts-loader": "9.5.1",
     "typescript": "5.4.5",
-    "webpack-cli": "5.1.4"
+    "webpack-cli": "5.1.4",
+    "webpack-merge": "5.10.0"
   }
 }
