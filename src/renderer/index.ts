@@ -1,4 +1,2 @@
 import hello from "../hello";
-
-console.log(hello("world"));
-console.log(hello("TypeScript"));
+document.body.innerHTML = `<h1>${hello("world")}</h1>`;

@@ -1,3 +1,5 @@
-const configuration = {};
+const configuration = {
+    mode: "production",
+};
 
 export default configuration;

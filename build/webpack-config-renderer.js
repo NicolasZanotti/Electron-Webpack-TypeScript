@@ -1,13 +1,12 @@
 import path from "path";
 import { merge } from "webpack-merge";
 import baseConfig from "./webpack-config-base.js";
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from "url";
+import HtmlWebpackPlugin from "html-webpack-plugin";
 
-export const __filename = fileURLToPath(import.meta.url);
-export const __dirname = path.dirname(__filename);
+export const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const configuration = {
-  mode: "production",
   entry: "./src/renderer/index.ts",
   module: {
     rules: [
@@ -17,7 +16,7 @@ const configuration = {
           {
             loader: "ts-loader",
             options: {
-              configFile: path.resolve(__dirname, "tsconfig-renderer.json"),
+              configFile: path.resolve(dirname, "tsconfig-renderer.json"),
             },
           },
         ],
@@ -27,11 +26,18 @@ const configuration = {
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
+    modules: ["src", "node_modules"],
   },
   output: {
     filename: "renderer.js",
-    path: path.resolve(__dirname, "../dist"),
+    path: path.resolve(dirname, "../dist"),
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: path.join("index.html"),
+      template: path.resolve(dirname, "../src/renderer/index.html"),
+    }),
+  ],
 };
 
 export default merge(baseConfig, configuration);

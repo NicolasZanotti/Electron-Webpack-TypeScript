@@ -4,5 +4,5 @@
     "target": "ES2022",
     "strict": true
   },
-  "include": ["src", "build"]
+  "include": ["src"]
 }
