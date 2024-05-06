@@ -1,8 +1,0 @@
-{
-  "compilerOptions": {
-    "outDir": "dist",
-    "target": "ES2022",
-    "strict": true
-  },
-  "include": ["src"]
-}

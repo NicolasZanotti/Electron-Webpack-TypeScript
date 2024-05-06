@@ -1,3 +1,3 @@
-export default function hello(str:String) {
+export default function hello(str: String) {
   return `Hello ${str}!`;
 }

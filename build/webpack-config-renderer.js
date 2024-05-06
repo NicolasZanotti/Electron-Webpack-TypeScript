@@ -8,6 +8,7 @@ export const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const configuration = {
   entry: "./src/renderer/index.ts",
+  target: "electron-renderer",
   module: {
     rules: [
       {
@@ -16,7 +17,10 @@ const configuration = {
           {
             loader: "ts-loader",
             options: {
-              configFile: path.resolve(dirname, "tsconfig-renderer.json"),
+              configFile: path.resolve(
+                dirname,
+                "../src/renderer/tsconfig.json"
+              ),
             },
           },
         ],
@@ -34,7 +38,7 @@ const configuration = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: path.join("index.html"),
+      filename: "index.html",
       template: path.resolve(dirname, "../src/renderer/index.html"),
     }),
   ],
