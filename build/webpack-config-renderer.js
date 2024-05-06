@@ -1,12 +1,11 @@
 import path from "path";
-import { merge } from "webpack-merge";
-import baseConfig from "./webpack-config-base.js";
 import { fileURLToPath } from "url";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
 export const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const configuration = {
+  mode: "production",
   entry: "./src/renderer/index.ts",
   target: "electron-renderer",
   module: {
@@ -44,4 +43,4 @@ const configuration = {
   ],
 };
 
-export default merge(baseConfig, configuration);
+export default configuration;
