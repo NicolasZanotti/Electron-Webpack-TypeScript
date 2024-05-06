@@ -32,12 +32,13 @@ const configuration = {
     modules: ["src", "node_modules"],
   },
   output: {
-    filename: "renderer.js",
+    filename: "renderer.mjs",
     path: path.resolve(dirname, "../dist"),
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
+      scriptLoading: "module",
       template: path.resolve(dirname, "../src/renderer/index.html"),
     }),
   ],
